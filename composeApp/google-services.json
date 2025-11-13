@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "777111787557",
+    "project_id": "talksphere-c51ca",
+    "storage_bucket": "talksphere-c51ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777111787557:android:31b1350d4629d6d0ae47cc",
+        "android_client_info": {
+          "package_name": "com.talk.sphere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGsS0UtukP-9SVxJZszm1egad5UqJyCys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
