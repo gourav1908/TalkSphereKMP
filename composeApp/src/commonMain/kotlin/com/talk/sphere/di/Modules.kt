@@ -5,6 +5,7 @@ import com.talk.sphere.chat.data.ChatRepositoryImpl
 import com.talk.sphere.chat.domain.ChatRepository
 import com.talk.sphere.chat.presentation.ChatViewModel
 import com.talk.sphere.core.data.HttpClientFactory
+import com.talk.sphere.login.presentation.LoginViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModelOf
@@ -13,7 +14,7 @@ import org.koin.dsl.module
 
 expect val platformModule: Module
 
-val sharedModule = module {
+val sharedModule = networkModule() + module {
     single { HttpClientFactory.create(get()) }
     singleOf(::ChatRepositoryImpl).bind<ChatRepository>()
 //    singleOf(::KtorRemoteBookDataSource).bind<RemoteBookDataSource>() // Local DB
@@ -26,4 +27,10 @@ val sharedModule = module {
     single { get<FavoriteBookDatabase>().favoriteBookDao }*/ // Local DB
 
     viewModelOf(::ChatViewModel)
+    viewModelOf(::LoginViewModel)
+
+
+    //single - Singleton instance
+    // factory - New instance each time
+
 }

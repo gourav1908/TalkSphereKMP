@@ -10,15 +10,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.talk.sphere.presentation.AppPrimary
+import com.talk.sphere.core.presentation.AppPrimary
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.compose.koinInject
 import talksphere.composeapp.generated.resources.Res
 import talksphere.composeapp.generated.resources.ic_chat_logo
 
 @Composable
 fun ChatScreen() {
-    val viewmodel = org.koin.compose.koinInject<ChatViewModel>()
+    val viewmodel = koinInject<ChatViewModel>()
+//    val vm: ChatViewModel = koinViewModel()
     Column(
         modifier = Modifier
             .fillMaxSize()
